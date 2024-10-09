@@ -12,8 +12,6 @@ export async function handler(event: NewMessageEvent) {
 	const text = event.message.rawText;
 	if (!text) return;
 
-	console.log(text);
-
 	const chatId = event.chatId!.toString();
 	Client._log.info(`New message from ${chatId}`);
 
@@ -25,7 +23,7 @@ export async function handler(event: NewMessageEvent) {
 
 	const media = await event.message.downloadMedia();
 	const image = media?.toString('base64');
-	// if (sender.id.toString() !== '7097576821') return;
+	if (sender.id.toString() !== '7097576821') return;
 
 	const address = Parser.parseAddress(text);
 	const update = text.split('\n').find(l => l.startsWith('Up '));
