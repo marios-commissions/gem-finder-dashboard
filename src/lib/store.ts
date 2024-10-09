@@ -1,5 +1,5 @@
+import EventEmitter from 'node:events';
 import type { Entity } from '~/types';
-import EventEmitter from 'events';
 
 
 class Store extends Map<string, Entity> {
