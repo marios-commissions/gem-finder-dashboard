@@ -4,6 +4,9 @@
 	"version": "1.0.0",
 	"author": "Mario Paraschiv (me@marioparaschiv.com)",
 	"license": "Unlicensed",
+	"scripts": {
+		"build": "swc src -d dist -D --delete-dir-on-start --strip-leading-paths"
+	},
 	"peerDependencies": {
 		"typescript": "^5.0.0"
 	},
