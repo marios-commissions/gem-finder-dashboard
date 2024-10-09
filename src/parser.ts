@@ -30,7 +30,7 @@ export function parseCoinName(content: string) {
 }
 
 export function parseUpdate(content: string) {
-	return content.match(/\dx/mi)?.[0];
+	return content.match(/(\d+\.?\d*)x/mi)?.[0];
 }
 
 export function parseLinks(text: string, entities: Api.TypeMessageEntity[] | undefined): Record<string, string> {

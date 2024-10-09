@@ -48,6 +48,7 @@ export async function handler(event: NewMessageEvent) {
 		if (existing) {
 			existing.lastUpdated = Date.now();
 			existing.updates = [...existing.updates, entityUpdate];
+			store.events.emit('store-updated');
 		} else {
 			store.set(address, {
 				...details,
