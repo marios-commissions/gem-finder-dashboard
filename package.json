@@ -1,0 +1,19 @@
+{
+	"name": "gem-finder-dashboard",
+	"module": "src/index.ts",
+	"version": "1.0.0",
+	"author": "Mario Paraschiv (me@marioparaschiv.com)",
+	"license": "Unlicensed",
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"devDependencies": {
+		"@swc/cli": "0.4.1-nightly.20240914",
+		"@swc/core": "^1.7.26",
+		"@types/node": "^22.7.4"
+	},
+	"dependencies": {
+		"input": "^1.0.1",
+		"telegram": "^2.25.15"
+	}
+}
