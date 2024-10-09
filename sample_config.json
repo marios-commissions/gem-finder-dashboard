@@ -1,0 +1,13 @@
+{
+	"web": {
+		"externalIp": "localhost",
+		"port": 5599
+	},
+	"telegram": {
+		"phone": "<number>",
+		"api": {
+			"id": 26538001,
+			"hash": "<api hash>"
+		}
+	}
+}

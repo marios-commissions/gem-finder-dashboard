@@ -62,7 +62,7 @@ function App() {
 					{latestUpdate !== void 0 && <span className='text-xl right-2 font-bold text-red-500 ml-auto'>{latestUpdate.change}</span>}
 				</div>;
 			})}
-		</div>;
+		</div>
 		{hoveredImage && <ImageOverlay src={hoveredImage} onClose={() => setHoveredImage(null)} />}
 	</>;
 }
