@@ -26,7 +26,7 @@ function App() {
 		<div className='grid p-4 grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2'>
 			{Object.entries(data.payload).length === 0 && 'No coins have been captured yet.'}
 			{Object.entries(data.payload).sort(([, detailsA], [, detailsB]) => detailsB.lastUpdated - detailsA.lastUpdated).map(([address, details]) => {
-				const latestUpdate = details.updates[0];
+				const latestUpdate = details.updates.sort((a, b) => b.date - a.date)[0];
 
 				return <div className='bg-neutral-600 rounded-md p-2 flex gap-4 relative items-center'>
 					{details.image && (
