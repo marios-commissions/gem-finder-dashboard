@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useData } from './providers/websocket-provider';
 
 
-const ImageOverlay = ({ src, onClose }) => (
+const ImageOverlay = ({ src, onClose }: { src: string, onClose: React.MouseEventHandler<HTMLDivElement>; }) => (
 	<div
 		className="fixed inset-0 bg-black/50 pointer-events-none flex items-center justify-center z-999999999"
 		onClick={onClose}
