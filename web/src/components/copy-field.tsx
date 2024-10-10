@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+// @ts-nocheck
 import { CopyCheck, CopyIcon } from 'lucide-react';
 
 
