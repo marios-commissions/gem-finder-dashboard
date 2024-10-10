@@ -1,18 +1,19 @@
 import { useState } from 'react';
 
 import { useData } from './providers/websocket-provider';
+import CopyField from './components/copy-field';
 
 
 const ImageOverlay = ({ src, onClose }: { src: string, onClose: React.MouseEventHandler<HTMLDivElement>; }) => (
 	<div
-		className="fixed inset-0 bg-black/50 pointer-events-none flex items-center justify-center z-999999999"
+		className='fixed inset-0 bg-black/50 pointer-events-none flex items-center justify-center z-999999999'
 		onClick={onClose}
 	>
-		<div className="bg-white p-2 rounded-lg">
+		<div className='bg-white p-2 rounded-lg'>
 			<img
 				src={src}
-				alt="Full size"
-				className="max-w-[90vw] max-h-[90vh]object-contain"
+				alt='Full size'
+				className='max-w-[90vw] max-h-[90vh]object-contain'
 			/>
 		</div>
 	</div>
@@ -43,7 +44,10 @@ function App() {
 						</div>
 					)}				{/* Details */}
 					<div className='relative flex flex-col w-full h-full overflow-hidden flex-nowrap'>
-						<span className='overflow-hidden font-bold text-sm'>{details.name.replace(/([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g, '')}</span>
+						<span className='overflow-hidden flex items-center w-full font-bold text-base gap-2'>
+							{details.name.replace(/([\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF])/g, '')}
+							<CopyField value={address} />
+						</span>
 						<div className='flex items-center flex-nowrap text-sm'>
 							<span className='overflow-ellipsis'>MC: ${details.marketCap}</span>
 							<div className='h-full bg-neutral-200/10 mx-1 w-0.5' />
@@ -55,7 +59,6 @@ function App() {
 							<div className='h-full bg-neutral-200/10 mx-1 w-0.5' />
 							<span className='overflow-ellipsis'>F: {details.fresh}%</span>
 						</div>
-						<p className='font-semibold overflow-ellipsis text-xs'>{address}</p>
 						<div className='flex gap-2 overflow-hidden'>{Object.entries(details.twitterSearches).map(([name, url]) => <a className='hover:underline' href={url}>{name.charAt(0).toUpperCase()}</a>)}</div>
 					</div>
 					{/* Twitter Links */}
